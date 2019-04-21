@@ -1,8 +1,11 @@
 package com.uem.controller;
 
+import org.springframework.stereotype.Controller;
+
 import com.uem.classesDAO.FilmeDAO;
 import com.uem.model.Filme;
 
+@Controller
 public class ControlFilme {
 	
 	FilmeDAO filme = new FilmeDAO();
