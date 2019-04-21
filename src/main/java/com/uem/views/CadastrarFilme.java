@@ -63,15 +63,15 @@ public class CadastrarFilme {
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNome = new JLabel("Nome:");
-		lblNome.setBounds(56, 91, 46, 14);
+		lblNome.setBounds(66, 91, 46, 14);
 		frame.getContentPane().add(lblNome);
 		
 		JLabel lblDiretor = new JLabel("Diretor:");
-		lblDiretor.setBounds(56, 137, 46, 14);
+		lblDiretor.setBounds(66, 137, 46, 14);
 		frame.getContentPane().add(lblDiretor);
 		
 		JLabel lblProdutora = new JLabel("Produtora:");
-		lblProdutora.setBounds(56, 188, 58, 14);
+		lblProdutora.setBounds(49, 188, 63, 14);
 		frame.getContentPane().add(lblProdutora);
 		
 		textField_1 = new JTextField();
