@@ -4,8 +4,11 @@ import com.uem.model.Filme;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.uem.model.Exemplar;
 
+@Service
 public interface InterfaceExemplarDAO {
 	public boolean checarStatus(List <Exemplar> exemplares);
 	public boolean cadastrarExemplar(Filme filme);
