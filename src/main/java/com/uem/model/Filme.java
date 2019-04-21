@@ -15,12 +15,11 @@ public class Filme {
 		
 	}
 	
-	public Filme(String titulo, int codigo, String produtora, String diretor, boolean ativo) {
-		this.titulo = titulo;
-		this.codigo = codigo;
+	public Filme(String titulo, String produtora, String diretor) {
+		this.titulo = titulo;		
 		this.produtora = produtora;
 		this.diretor = diretor;
-		this.ativo = ativo;
+		this.ativo = true;
 	}
 	
 	public List<Exemplar> getExemplares() {

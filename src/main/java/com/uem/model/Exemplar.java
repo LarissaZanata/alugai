@@ -4,15 +4,16 @@ public class Exemplar {
 	private int codigo;
 	private boolean emprestado;
 	private boolean reservado;
+	private Filme filme;
 	
 	public Exemplar() {
 		
 	}
 	
-	public Exemplar(int codigo, boolean emprestado, boolean reservado) {
-		this.codigo = codigo;
-		this.emprestado = emprestado;
-		this.reservado = reservado;
+	public Exemplar(Filme filme) {
+		this.emprestado = false;
+		this.reservado = false;
+		this.filme = filme;
 	}
 	
 	
@@ -33,6 +34,14 @@ public class Exemplar {
 	}
 	public void setReservado(boolean reservado) {
 		this.reservado = reservado;
+	}
+
+	public Filme getFilme() {
+		return filme;
+	}
+
+	public void setFilme(Filme filme) {
+		this.filme = filme;
 	}
 	
 	

@@ -6,5 +6,5 @@ public interface InterfaceFilmeDAO {
 	public boolean alterarFilme(String titulo, String produtora);
 	public boolean excluirFilme(String titulo, String produtora);
 	public Filme buscarFilme(String titulo, String produtora);
-	public boolean cadastrarFilme(String titulo, int codigo, String produtora, String diretor, boolean ativo);
+	public boolean cadastrarFilme(String titulo, String produtora, String diretor);
 }
