@@ -4,15 +4,19 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JPasswordField;
 
 public class Logon {
 
 	private JFrame frmAluga;
 	private JTextField textField;
-	private JTextField textField_1;
+	private JPasswordField passwordField;
 
 	/**
 	 * Launch the application.
@@ -62,15 +66,27 @@ public class Logon {
 		frmAluga.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(137, 118, 219, 20);
-		frmAluga.getContentPane().add(textField_1);
-		
 		JButton btnEntrar = new JButton("Entrar");
+		btnEntrar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				if(textField.getText().equals("admin") && passwordField.getText().equals("admin1")) {
+					JOptionPane.showMessageDialog(null, "Bem vindo à locadora!");
+					Alugai window1 = new Alugai();
+					window1.frame.setVisible(true);
+					frmAluga.setVisible(false);						
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Dados inválidos!");
+				}
+			}
+		});
 		btnEntrar.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
-		btnEntrar.setBounds(285, 177, 75, 23);
+		btnEntrar.setBounds(281, 175, 75, 23);
 		frmAluga.getContentPane().add(btnEntrar);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(137, 119, 219, 20);
+		frmAluga.getContentPane().add(passwordField);
 	}
-
 }
