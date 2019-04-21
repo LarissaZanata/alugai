@@ -2,13 +2,27 @@ package com.uem.model;
 
 import java.util.List;
 
-public class Filme {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-	private String titulo;
+@Entity
+public class Filme {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codigo;
+	@Column
+	private String titulo;
+	@Column
 	private String produtora;
+	@Column
 	private String diretor;
+	@Column
 	private boolean ativo;
+	@Column
 	private List<Exemplar> exemplares;
 		
 	public Filme() {

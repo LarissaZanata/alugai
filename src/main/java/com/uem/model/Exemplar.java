@@ -1,9 +1,17 @@
 package com.uem.model;
 
+import javax.persistence.*;
+
+@Entity
 public class Exemplar {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codigo;
+	@Column
 	private boolean emprestado;
+	@Column
 	private boolean reservado;
+	@Column
 	private Filme filme;
 	
 	public Exemplar() {
