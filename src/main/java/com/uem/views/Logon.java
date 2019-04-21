@@ -47,22 +47,22 @@ public class Logon {
 	private void initialize() {
 		frmAluga = new JFrame();
 		frmAluga.setTitle("Alugaí 1.0");
-		frmAluga.setBounds(100, 100, 450, 300);
+		frmAluga.setBounds(100, 100, 800, 500);
 		frmAluga.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmAluga.getContentPane().setLayout(null);
 		
 		JLabel lblLogin = new JLabel("Login");
 		lblLogin.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
-		lblLogin.setBounds(81, 71, 46, 14);
+		lblLogin.setBounds(234, 160, 46, 14);
 		frmAluga.getContentPane().add(lblLogin);
 		
 		JLabel lblSenha = new JLabel("Senha");
 		lblSenha.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
-		lblSenha.setBounds(81, 121, 46, 14);
+		lblSenha.setBounds(234, 210, 46, 14);
 		frmAluga.getContentPane().add(lblSenha);
 		
 		textField = new JTextField();
-		textField.setBounds(137, 68, 219, 20);
+		textField.setBounds(290, 157, 219, 20);
 		frmAluga.getContentPane().add(textField);
 		textField.setColumns(10);
 		
@@ -82,11 +82,21 @@ public class Logon {
 			}
 		});
 		btnEntrar.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
-		btnEntrar.setBounds(281, 175, 75, 23);
+		btnEntrar.setBounds(434, 264, 75, 23);
 		frmAluga.getContentPane().add(btnEntrar);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(137, 119, 219, 20);
+		passwordField.setBounds(290, 208, 219, 20);
 		frmAluga.getContentPane().add(passwordField);
+		
+		JButton btnNewButton = new JButton("Ajuda");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JOptionPane.showMessageDialog(null, "Login: digite seu login\nSenha: digita sua senha");
+			}
+		});
+		btnNewButton.setBounds(693, 11, 61, 20);
+		frmAluga.getContentPane().add(btnNewButton);
 	}
 }

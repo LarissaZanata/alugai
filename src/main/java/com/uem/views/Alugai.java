@@ -2,27 +2,38 @@ package com.uem.views;
 
 import java.awt.EventQueue;
 
+
 import javax.swing.JFrame;
-import javax.swing.JButton;
-import java.awt.BorderLayout;
-import javax.swing.JPanel;
-import javax.swing.JMenuBar;
-import java.awt.Button;
-import javax.swing.JTabbedPane;
 import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.border.TitledBorder;
+import java.awt.Image;
+
 import javax.swing.SwingConstants;
-import javax.swing.JToolBar;
-import java.awt.Canvas;
-import javax.swing.ImageIcon;
-import javax.swing.JList;
-import javax.swing.JMenu;
+import javax.swing.SwingUtilities;
+
 import java.awt.Color;
+import java.awt.Component;
+import javax.swing.Box;
+import javax.swing.ImageIcon;
+import javax.swing.JSplitPane;
+import java.awt.BorderLayout;
+import javax.swing.JSeparator;
+import javax.swing.JButton;
+import javax.swing.JTabbedPane;
+import javax.swing.JMenuBar;
+import java.awt.Label;
+import java.awt.Button;
+import java.awt.Canvas;
+import javax.swing.JPanel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JTextField;
+import javax.swing.JDesktopPane;
 
 public class Alugai {
 
 	public JFrame frame;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -53,30 +64,84 @@ public class Alugai {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setTitle("Alugaí 1.0");
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 800, 658);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel_2 = new JLabel("Busca");
-		lblNewLabel_2.setBounds(309, 33, 67, 19);
-		frame.getContentPane().add(lblNewLabel_2);
-		lblNewLabel_2.setVerticalAlignment(SwingConstants.BOTTOM);
-		lblNewLabel_2.setFont(new Font("Arial", Font.PLAIN, 16));
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(166, 106, 453, 38);
+		frame.getContentPane().add(menuBar);
 		
-		JLabel lblNewLabel_1 = new JLabel("Locação");
-		lblNewLabel_1.setBounds(211, 33, 88, 19);
-		frame.getContentPane().add(lblNewLabel_1);
-		lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 16));
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 145, 784, 474);	
 		
-		JLabel lblCadastro = new JLabel("Cadastro");
-		lblCadastro.setBackground(Color.WHITE);
-		lblCadastro.setBounds(113, 33, 88, 19);
-		frame.getContentPane().add(lblCadastro);
-		lblCadastro.setVerticalAlignment(SwingConstants.BOTTOM);
-		lblCadastro.setFont(new Font("Arial", Font.PLAIN, 16));
+		Button button_3 = new Button("Home");
+		menuBar.add(button_3);
 		
-		JLabel lblHome = new JLabel("home");
-		lblHome.setBounds(44, 37, 46, 14);
-		frame.getContentPane().add(lblHome);
+		Button button_2 = new Button("Cadastro");
+		button_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				
+				JButton btnNewButton_1 = new JButton("Cadastrar Filme");
+					btnNewButton_1.addMouseListener(new MouseAdapter(){					
+						public void mouseClicked(MouseEvent arg0) {
+							CadastrarFilme cadastroFilmeTela = new CadastrarFilme();
+							cadastroFilmeTela.frame.setVisible(true);
+						}
+					});
+					
+				panel.add(btnNewButton_1);
+				
+				JButton btnNewButton_2 = new JButton("Cadastrar Cliente");				
+				panel.add(btnNewButton_2);
+				
+				JButton btnNewButton_3 = new JButton("Cadastrar Funcionário");				
+				panel.add(btnNewButton_3);
+				
+				frame.getContentPane().add(panel);
+				
+				btnNewButton_1.setBounds(198, 105, 388, 47);
+				btnNewButton_2.setBounds(198, 180, 388, 47);
+				btnNewButton_3.setBounds(198, 247, 388, 47);
+			}
+		});
+		menuBar.add(button_2);
+		
+		Button button_1 = new Button("Locação");
+		menuBar.add(button_1);
+		
+		Button button = new Button("Busca");
+		button.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				panel.setVisible(false);
+				panel.setVisible(true);
+				
+				JButton btnNewButton_2 = new JButton("Buscar Filme");				
+				panel.add(btnNewButton_2);
+				
+				JButton btnNewButton_3 = new JButton("Buscar Cliente");				
+				panel.add(btnNewButton_3);
+				
+				frame.getContentPane().add(panel);
+				
+				btnNewButton_2.setBounds(198, 105, 388, 47);
+				btnNewButton_3.setBounds(198, 180, 388, 47);
+			}
+		});
+		menuBar.add(button);
+		
+		Label label = new Label("Alugaí");
+		label.setFont(new Font("Arial", Font.BOLD, 50));
+		label.setBounds(294, 10, 166, 65);
+		frame.getContentPane().add(label);
+		
+		JLabel label_1 = new JLabel("teste");
+		Image img = new ImageIcon(this.getClass().getResource("/filmadora2.jpg")).getImage();
+		label_1.setIcon(new ImageIcon(img));
+		label_1.setBounds(480, 10, 111, 65);
+		frame.getContentPane().add(label_1);	
 	}
 }
