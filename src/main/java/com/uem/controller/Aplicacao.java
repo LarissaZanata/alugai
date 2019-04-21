@@ -9,9 +9,11 @@ public class Aplicacao {
 	    context.scan(Aplicacao.class.getPackage().getName());
 	    context.refresh();
 	       
-	    // Utilizando a nossa classe ClienteServico com as
+	    // Utilizando a nossa classe ControllerFilme com as
 	    // injeções feitas pelo Spring.
-
+	    
+	  //  ControllerFilme controller = context.getBean(ControlFilme.class);
+	    
 	       
 	    context.close();
 	}

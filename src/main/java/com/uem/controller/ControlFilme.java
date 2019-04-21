@@ -3,12 +3,13 @@ package com.uem.controller;
 import org.springframework.stereotype.Controller;
 
 import com.uem.classesDAO.FilmeDAO;
+import com.uem.interfacesDAO.InterfaceFilmeDAO;
 import com.uem.model.Filme;
 
 @Controller
 public class ControlFilme {
 	
-	FilmeDAO filme = new FilmeDAO();
+	InterfaceFilmeDAO filme = new FilmeDAO();
 	
 	public boolean cadastrarFilme(String titulo, String produtora, String diretor) {
 		return filme.cadastrarFilme(titulo, produtora, diretor);
