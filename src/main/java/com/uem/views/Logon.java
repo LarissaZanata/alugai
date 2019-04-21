@@ -69,7 +69,7 @@ public class Logon {
 		
 		JButton btnEntrar = new JButton("Entrar");
 		btnEntrar.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
-		btnEntrar.setBounds(285, 177, 71, 23);
+		btnEntrar.setBounds(285, 177, 75, 23);
 		frmAluga.getContentPane().add(btnEntrar);
 	}
 
