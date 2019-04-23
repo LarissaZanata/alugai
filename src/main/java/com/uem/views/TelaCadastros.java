@@ -11,7 +11,7 @@ import java.awt.Font;
 
 public class TelaCadastros {
 
-	private JFrame frame;
+	public JFrame frame;
 
 	/**
 	 * Launch the application.

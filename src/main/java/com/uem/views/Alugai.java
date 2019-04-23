@@ -81,7 +81,8 @@ public class Alugai {
 		button_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				
+				TelaCadastros telaCadastros = new TelaCadastros();
+				telaCadastros.frame.setVisible(true);
 				
 			}
 		});

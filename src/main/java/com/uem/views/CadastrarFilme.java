@@ -10,6 +10,8 @@ import javax.swing.JTextField;
 import com.uem.controller.ControlFilme;
 
 import java.awt.Font;
+import java.awt.Window;
+
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -106,6 +108,8 @@ public class CadastrarFilme {
 				else {
 					JOptionPane.showMessageDialog(null, "Filme não cadastrado");
 				}
+				
+				frame.setVisible(false);
 			}
 		});
 		btnCadastrar.setBounds(165, 298, 104, 23);
