@@ -3,10 +3,12 @@ package com.uem.classesDAO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.springframework.stereotype.Repository;
 
 import com.uem.interfacesDAO.InterfaceFilmeDAO;
 import com.uem.model.Filme;
 
+@Repository
 public class FilmeDAO implements InterfaceFilmeDAO{
 
 	@Override

@@ -6,32 +6,43 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.stereotype.Component;
+
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JPasswordField;
 
-public class Logon {
-
-	private JFrame frmAluga;
+@SpringBootApplication	
+public class Logon extends JFrame{
+	
+	@Autowired
+	public JFrame frmAluga;
 	private JTextField textField;
 	private JPasswordField passwordField;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Logon window = new Logon();
-					window.frmAluga.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	
+	public static void main(String[] args){
+		 ConfigurableApplicationContext ctx = new SpringApplicationBuilder(Logon.class)
+		            .headless(false).run(args);
+		
+		EventQueue.invokeLater(() -> {
+		        Logon ex = ctx.getBean(Logon.class);
+		        ex.initialize();
+		        ex.frmAluga.setVisible(true);
+		    });
+		 
+		
 	}
 
 	/**
@@ -93,10 +104,11 @@ public class Logon {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JOptionPane.showMessageDialog(null, "Login: digite seu login\nSenha: digita sua senha");
+				JOptionPane.showMessageDialog(null, "Login: digite seu login\nSenha: digite sua senha");
 			}
 		});
-		btnNewButton.setBounds(693, 11, 61, 20);
+		btnNewButton.setBounds(679, 11, 75, 20);
 		frmAluga.getContentPane().add(btnNewButton);
 	}
+
 }

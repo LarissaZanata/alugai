@@ -2,11 +2,13 @@ package com.uem.classesDAO;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.uem.interfacesDAO.InterfaceExemplarDAO;
 import com.uem.model.Exemplar;
 import com.uem.model.Filme;
 
-
+@Repository
 public class ExemplarDAO implements InterfaceExemplarDAO{
 
 	@Override

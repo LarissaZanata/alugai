@@ -2,9 +2,14 @@ package com.uem.model;
 
 import javax.persistence.*;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Repository;
 
-@Repository
+@Configuration
+@PropertySource("classpath:configprops.properties")
+@ConfigurationProperties(prefix = "exemplar")
 @Entity
 public class Exemplar {
 	@Id
