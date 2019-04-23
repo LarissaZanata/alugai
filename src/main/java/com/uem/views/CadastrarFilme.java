@@ -51,6 +51,7 @@ public class CadastrarFilme {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 393);
 		frame.getContentPane().setLayout(null);
+		frame.setLocation(250, 250);
 		
 		textField = new JTextField();
 		textField.setBounds(122, 88, 229, 20);

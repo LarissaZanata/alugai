@@ -34,6 +34,8 @@ public class Alugai {
 
 	public JFrame frame;
 	private JTextField textField;
+	private JPanel panel;
+	private JPanel panel1;
 
 	/**
 	 * Launch the application.
@@ -80,31 +82,7 @@ public class Alugai {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				
-				JButton btnNewButton_1 = new JButton("Cadastrar Filme");
-					btnNewButton_1.addMouseListener(new MouseAdapter(){					
-						public void mouseClicked(MouseEvent arg0) {
-							CadastrarFilme cadastroFilmeTela = new CadastrarFilme();
-							cadastroFilmeTela.frame.setVisible(true);
-						}
-					});
-					
-
-				JPanel panel = new JPanel();
-				panel.setBounds(0, 145, 784, 474);	
-					
-				panel.add(btnNewButton_1);
 				
-				JButton btnNewButton_2 = new JButton("Cadastrar Cliente");				
-				panel.add(btnNewButton_2);
-				
-				JButton btnNewButton_3 = new JButton("Cadastrar Funcionário");				
-				panel.add(btnNewButton_3);
-				
-				frame.getContentPane().add(panel);
-				
-				btnNewButton_1.setBounds(198, 105, 388, 47);
-				btnNewButton_2.setBounds(198, 180, 388, 47);
-				btnNewButton_3.setBounds(198, 247, 388, 47);
 			}
 		});
 		menuBar.add(button_2);
@@ -117,9 +95,7 @@ public class Alugai {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
-				//frame.resetForm();
-				
-				JPanel panel1 = new JPanel();
+				panel1 = new JPanel();
 				panel1.setBounds(0, 145, 784, 474);	
 				
 				JButton btnNewButton_2 = new JButton("Buscar Filme");				
@@ -128,7 +104,7 @@ public class Alugai {
 				JButton btnNewButton_3 = new JButton("Buscar Cliente");				
 				panel1.add(btnNewButton_3);
 				
-				frame.getContentPane().add(panel1);
+				frame.add(panel1);
 				
 				panel1.setBounds(0, 145, 784, 474);	
 				btnNewButton_2.setBounds(198, 105, 388, 47);
