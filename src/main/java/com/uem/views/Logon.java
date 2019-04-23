@@ -9,19 +9,22 @@ import javax.swing.JTextField;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import java.awt.Font;
+
+import javax.annotation.PostConstruct;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JPasswordField;
 
-@SpringBootApplication	
-public class Logon extends JFrame{
+public class Logon{
 	
 	@Autowired
 	public JFrame frmAluga;
@@ -33,16 +36,16 @@ public class Logon extends JFrame{
 	 */
 	
 	public static void main(String[] args){
-		 ConfigurableApplicationContext ctx = new SpringApplicationBuilder(Logon.class)
-		            .headless(false).run(args);
-		
-		EventQueue.invokeLater(() -> {
-		        Logon ex = ctx.getBean(Logon.class);
-		        ex.initialize();
-		        ex.frmAluga.setVisible(true);
-		    });
-		 
-		
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Logon window = new Logon();
+					window.frmAluga.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 
 	/**
@@ -55,7 +58,9 @@ public class Logon extends JFrame{
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	
+	@PostConstruct
+	public JFrame initialize() {
 		frmAluga = new JFrame();
 		frmAluga.setTitle("Alugaí 1.0");
 		frmAluga.setBounds(100, 100, 800, 500);
@@ -109,6 +114,8 @@ public class Logon extends JFrame{
 		});
 		btnNewButton.setBounds(679, 11, 75, 20);
 		frmAluga.getContentPane().add(btnNewButton);
+		
+		return frmAluga;
 	}
 
 }
