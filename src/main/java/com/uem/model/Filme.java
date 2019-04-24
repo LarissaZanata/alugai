@@ -18,8 +18,8 @@ import org.springframework.stereotype.Repository;
 public class Filme {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int codigo;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long codigo;
 	@Column
 	private String titulo;
 	@Column
@@ -56,10 +56,10 @@ public class Filme {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	public int getCodigo() {
+	public Long getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(int codigo) {
+	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
 	public String getProdutora() {

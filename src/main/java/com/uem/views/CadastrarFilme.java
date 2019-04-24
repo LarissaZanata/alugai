@@ -7,6 +7,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.uem.controller.ControlFilme;
 
 import java.awt.Font;
@@ -42,6 +44,10 @@ public class CadastrarFilme {
 	/**
 	 * Create the application.
 	 */
+	
+	@Autowired
+	ControlFilme controlFilme;
+	
 	public CadastrarFilme() {
 		initialize();
 	}
@@ -97,8 +103,6 @@ public class CadastrarFilme {
 				String titulo = lblNome.getText();
 				String diretor = lblDiretor.getText();
 				String produtora = lblProdutora.getText();
-				
-				ControlFilme controlFilme = new ControlFilme();
 				
 				cadastrou = controlFilme.cadastrarFilme(titulo, produtora, diretor);
 				
