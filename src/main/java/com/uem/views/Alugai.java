@@ -119,10 +119,11 @@ public class Alugai {
 		label.setBounds(294, 10, 166, 65);
 		frame.getContentPane().add(label);
 		
-		JLabel label_1 = new JLabel("teste");
-		Image img = new ImageIcon(this.getClass().getResource("/filmadora2.jpg")).getImage();
-		label_1.setIcon(new ImageIcon(img));
-		label_1.setBounds(480, 10, 111, 65);
-		frame.getContentPane().add(label_1);	
+		
+		//JLabel label_1 = new JLabel("teste");
+	//	Image img = new ImageIcon(this.getClass().getResource("/filmadora2.jpg")).getImage();
+	//	label_1.setIcon(new ImageIcon(img));
+		//label_1.setBounds(480, 10, 111, 65);
+		//frame.getContentPane().add(label_1);	
 	}
 }

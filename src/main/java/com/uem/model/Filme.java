@@ -14,8 +14,6 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Repository;
 
 
-@Configuration
-@PropertySource("classpath:configprops.properties")
 @Entity
 public class Filme {
 	

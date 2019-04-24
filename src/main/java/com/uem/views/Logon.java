@@ -86,7 +86,7 @@ public class Logon{
 		btnEntrar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				if(textField.getText().equals("admin") && passwordField.getText().equals("admin1")) {
+				if(textField.getText().equals("admin") && passwordField.getText().equals("")) {
 					JOptionPane.showMessageDialog(null, "Bem vindo à locadora!");
 					Alugai window1 = new Alugai();
 					window1.frame.setVisible(true);

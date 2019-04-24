@@ -43,10 +43,6 @@
 </dependency>
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
 		<dependency>
-    		<groupId>org.hibernate</groupId>
-    		<artifactId>hibernate-entitymanager</artifactId>
-    		</dependency>
-		<dependency>
 		   <groupId>org.hibernate</groupId>
 		   <artifactId>hibernate-validator</artifactId>
 		   <version>6.0.16.Final</version>

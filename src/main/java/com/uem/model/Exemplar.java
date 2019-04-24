@@ -7,9 +7,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Repository;
 
-@Configuration
-@PropertySource("classpath:configprops.properties")
-@ConfigurationProperties(prefix = "exemplar")
 @Entity
 public class Exemplar {
 	@Id
